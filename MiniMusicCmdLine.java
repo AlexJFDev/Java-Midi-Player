@@ -20,7 +20,6 @@ public class MiniMusicCmdLine{
     }
 
     public void play(int instrument, int note){
-
         try {
             Sequencer player = MidiSystem.getSequencer();
             player.open();
