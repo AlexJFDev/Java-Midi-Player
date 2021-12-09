@@ -3,7 +3,7 @@ import javax.sound.midi.*;
 public class MidiFromArray{
     
     public static void main(String[] args){
-        int instrumentNum = 1;
+        int instrumentNum = 2;
 
         MidiFromArray mini = new MidiFromArray();
         Integer[][] notes = {
@@ -35,7 +35,7 @@ public class MidiFromArray{
             Sequence seq = new Sequence(Sequence.PPQ, 4);
             Track track = seq.createTrack();
 
-            MidiEvent event = null;
+            //MidiEvent event = null;
 
             ShortMessage first = new ShortMessage();
             first.setMessage(192, 1, instrument, 0);
