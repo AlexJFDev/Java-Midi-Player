@@ -1,6 +1,6 @@
-package instrument;
+package dev.alexjf.java_midi_player.instrument;
 
-public class Instruments {
+public final class Instruments {
     //Pianos
     public static final int ACOUSTIC_GRAND_PIANO = 0;
     public static final int BRIGHT_ACOUSTIC_PIANO = 1;
@@ -144,4 +144,10 @@ public class Instruments {
     public static final int HELICOPTER = 125;
     public static final int APPLAUSE = 126;
     public static final int GUNSHOT = 127;
+
+    /**
+     * JavaDoc for MidiMain constructor.
+     */
+
+    private Instruments() {}
 }
