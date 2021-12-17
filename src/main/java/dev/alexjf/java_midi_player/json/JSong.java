@@ -1,5 +1,6 @@
 package dev.alexjf.java_midi_player.json;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -14,11 +15,8 @@ import org.json.JSONTokener;
 import dev.alexjf.java_midi_player.note.Note;
 
 public class JSong {
-    private String jSongLocationString;
 
     private InputStream jSongInputStream;
-    private JSONTokener jSongTokener;
-    private JSONObject jSongJSONObject;
 
     private Sequence jSongSequence;
     private String jSongDivisionTypeString;
@@ -27,11 +25,30 @@ public class JSong {
 
     private int jSongTrackLengthInt;
 
-    public JSong(String jSongLocationString2) {
-        jSongLocationString = jSongLocationString2;
-
+    public JSong(String jSongLocationString) {
         try {
-            InputStream jSongInputStream = new FileInputStream(jSongLocationString);
+            jSongInputStream = new FileInputStream(jSongLocationString);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        loadJSong();
+    }
+
+    public JSong(File jSongFile) {
+        try {
+            jSongInputStream = new FileInputStream(jSongFile);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        loadJSong();
+    }
+
+    public Sequence getJSongSequence(){
+        return jSongSequence;
+    }
+
+    private void loadJSong(){
+        try {
             JSONTokener jSongTokener = new JSONTokener(jSongInputStream);
             JSONObject jSongJSONObject = new JSONObject(jSongTokener);
 
@@ -68,14 +85,8 @@ public class JSong {
                 trackNote.queueNote();
             }
         }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (InvalidMidiDataException e) {
             e.printStackTrace();
         }
-    }
-
-    public Sequence getJSongSequence(){
-        return jSongSequence;
     }
 }

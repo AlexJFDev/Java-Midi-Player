@@ -42,7 +42,6 @@ public class Note {
         noteString = noteString2;
         startTickLong = startTickLong2;
         stopTickLong = stopTickLong2;
-
         this.setNoteInt(octaveInt, noteString);
     }
 
@@ -72,7 +71,7 @@ public class Note {
 
     public Note setNoteInt(int octaveInt2, String noteString2) {
         noteString2 = noteString2.toLowerCase();
-        octaveInt2 = octaveInt2++;
+        octaveInt2 = octaveInt2+1;
         switch (noteString2) {
             case "c": noteInt = 0 + 12 * octaveInt2;
                       break;
