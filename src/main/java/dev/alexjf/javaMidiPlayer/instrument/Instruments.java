@@ -1,4 +1,4 @@
-package dev.alexjf.java_midi_player.instrument;
+package dev.alexjf.javaMidiPlayer.instrument;
 
 public final class Instruments {
     //Pianos

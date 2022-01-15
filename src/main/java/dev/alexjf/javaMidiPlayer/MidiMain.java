@@ -1,11 +1,11 @@
-package dev.alexjf.java_midi_player;
+package dev.alexjf.javaMidiPlayer;
 
-import dev.alexjf.java_midi_player.frame.Screen;
+import dev.alexjf.javaMidiPlayer.frame.Screen;
 
 public final class MidiMain {
 
     private MidiMain() {}
-    
+
     public static void main(String[] args) {
         Screen screen = new Screen();
         screen.start();

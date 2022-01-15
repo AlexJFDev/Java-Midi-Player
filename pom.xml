@@ -183,7 +183,7 @@
                     <archive>
                     <manifest>
                         <mainClass>
-                            dev.alexjf.java_midi_player.MidiMain
+                            dev.alexjf.javaMidiPlayer.MidiMain
                         </mainClass>
                     </manifest>
                     </archive>

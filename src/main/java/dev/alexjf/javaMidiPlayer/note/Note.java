@@ -1,4 +1,4 @@
-package dev.alexjf.java_midi_player.note;
+package dev.alexjf.javaMidiPlayer.note;
 
 import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.MidiEvent;
@@ -45,7 +45,13 @@ public class Note {
         this.setNoteInt(octaveInt, noteString);
     }
 
-    public Note(int instrumentInt2, int octaveInt2, String noteString2, Track noteTrack2, long startTickLong2, long stopTickLong2) {
+    public Note(
+        int instrumentInt2, 
+        int octaveInt2, 
+        String noteString2, 
+        Track noteTrack2, 
+        long startTickLong2, 
+        long stopTickLong2) {
         instrumentInt = instrumentInt2;
         octaveInt = octaveInt2;
         noteString = noteString2;
@@ -70,34 +76,34 @@ public class Note {
     }
 
     public Note setNoteInt(int octaveInt2, String noteString2) {
-        noteString2 = noteString2.toLowerCase();
-        octaveInt2 = octaveInt2+1;
-        switch (noteString2) {
-            case "c": noteInt = 0 + 12 * octaveInt2;
-                      break;
-            case "c#": noteInt = 1 + 12 * octaveInt2;
-                       break;
-            case "d": noteInt = 2 + 12 * octaveInt2;
-                      break;
-            case "d#": noteInt = 3 + 12 * octaveInt2;
-                       break;
-            case "e": noteInt = 4 + 12 * octaveInt2;
-                      break;
-            case "f": noteInt = 5 + 12 * octaveInt2;
-                      break;
-            case "f#": noteInt = 6 + 12 * octaveInt2;
-                       break;
-            case "g": noteInt = 7 + 12 * octaveInt2;
-                      break;
-            case "g#": noteInt = 8 + 12 * octaveInt2;
-                       break;
-            case "a": noteInt = 9 + 12 * octaveInt2;
-                      break;
-            case "a#": noteInt = 10 + 12 * octaveInt2;
-                       break;
-            case "b": noteInt = 11 + 12 * octaveInt2;
-                      break;
-            default: throw new IllegalArgumentException(noteString2 + " is not a valid note.");
+        String noteString3 = noteString2.toLowerCase();
+        int octaveInt3 = octaveInt2 + 1;
+        switch (noteString3) {
+            case "c": noteInt = 0 + 12 * octaveInt3;
+                break;
+            case "c#": noteInt = 1 + 12 * octaveInt3;
+                break;
+            case "d": noteInt = 2 + 12 * octaveInt3;
+                break;
+            case "d#": noteInt = 3 + 12 * octaveInt3;
+                break;
+            case "e": noteInt = 4 + 12 * octaveInt3;
+                break;
+            case "f": noteInt = 5 + 12 * octaveInt3;
+                break;
+            case "f#": noteInt = 6 + 12 * octaveInt3;
+                break;
+            case "g": noteInt = 7 + 12 * octaveInt3;
+                break;
+            case "g#": noteInt = 8 + 12 * octaveInt3;
+                break;
+            case "a": noteInt = 9 + 12 * octaveInt3;
+                break;
+            case "a#": noteInt = 10 + 12 * octaveInt3;
+                break;
+            case "b": noteInt = 11 + 12 * octaveInt3;
+                break;
+            default: throw new IllegalArgumentException(noteString3 + " is not a valid note.");
         }
         return this;
     }
