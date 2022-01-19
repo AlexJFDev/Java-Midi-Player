@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import dev.alexjf.javaMidiPlayer.frame.Screen;
 import dev.alexjf.javaMidiPlayer.note.Note;
 
 public class JSong {
@@ -85,6 +86,7 @@ public class JSong {
 
                     Note trackNote = new Note(trackNoteInstrumentInt, trackNoteOctaveInt, trackNoteNoteString, track, trackNoteStartTickLong, trackNoteStopTickLong);
                     trackNote.queueNote();
+                    Screen.animatedPanel.controlChange(null);
                 }
             }
         } catch (InvalidMidiDataException e) {
